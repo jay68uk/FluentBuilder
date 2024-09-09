@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentBuilder.Console", "FluentBuilder.Console\FluentBuilder.Console.csproj", "{DA9AE70B-5BC9-401A-8F98-6DE85ECBAD80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentBuilder.UnitTests", "FluentBuilder.UnitTests\FluentBuilder.UnitTests.csproj", "{89ED0F38-E5BC-47DA-8599-56C79588A55D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA9AE70B-5BC9-401A-8F98-6DE85ECBAD80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA9AE70B-5BC9-401A-8F98-6DE85ECBAD80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA9AE70B-5BC9-401A-8F98-6DE85ECBAD80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA9AE70B-5BC9-401A-8F98-6DE85ECBAD80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89ED0F38-E5BC-47DA-8599-56C79588A55D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89ED0F38-E5BC-47DA-8599-56C79588A55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89ED0F38-E5BC-47DA-8599-56C79588A55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89ED0F38-E5BC-47DA-8599-56C79588A55D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
