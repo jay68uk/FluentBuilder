@@ -10,6 +10,11 @@ public class CategorySalesBuilderTests
     new Book("J.R.R. Tolkien", "The Hobbit" ),
     new Book("Craig Alanson", "Columbus Day")
   };
+  
+  private Action<BookBuilder> AddSalesPeriodAction(string saleId = "01", int totalQuantity = 100, decimal saleValue = 200.00m)
+  {
+    return book => book.AddSalesPeriod(saleId, totalQuantity, saleValue);
+  }
 
   private static Book _book = new Book( "Peter F. Hamilton", "Dreaming Void" );
   private const string Category = "ScienceFiction";
@@ -31,7 +36,7 @@ public class CategorySalesBuilderTests
   {
     var builder = new CategorySalesCalculatorBuilder(Category)
       .WithBooks(_books)
-      .WithBook(_book);
+      .WithBook(AddSalesPeriodAction(), _book.Author, _book.Title);
 
     var salesCalculator = builder.Calculate();
     
@@ -43,8 +48,8 @@ public class CategorySalesBuilderTests
   public void Should_AddListOfBooks_ToExistingBooksList_WhenInputIsValid()
   {
     var builder = new CategorySalesCalculatorBuilder(Category)
-      .WithBook(_book)
-      .WithBook(_book)
+      .WithBook(AddSalesPeriodAction(), _book.Author, _book.Title)
+      .WithBook(AddSalesPeriodAction("02", 200, 400m), _book.Author, _book.Title)
       .WithBooks(_books);
 
     var salesCalculator = builder.Calculate();
@@ -57,7 +62,7 @@ public class CategorySalesBuilderTests
   public void Should_AddBook_ToBooksList_WhenInputIsValid()
   {
     var builder = new CategorySalesCalculatorBuilder(Category)
-      .WithBook(_book);
+      .WithBook(AddSalesPeriodAction(), _book.Author, _book.Title);
 
     var salesCalculator = builder.Calculate();
     

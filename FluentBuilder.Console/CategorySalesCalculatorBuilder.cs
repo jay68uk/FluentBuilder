@@ -19,9 +19,11 @@ public class CategorySalesCalculatorBuilder()
     return this;
   }
 
-  public CategorySalesCalculatorBuilder WithBook(Book book)
+  public CategorySalesCalculatorBuilder WithBook(Action<BookBuilder> configureBook, string author, string title)
   {
-    _categorySalesCalculator.Books = _categorySalesCalculator.Books.Append(book);
+    var bookBuilder = new BookBuilder(author, title);
+    configureBook(bookBuilder);
+    _categorySalesCalculator.Books = _categorySalesCalculator.Books.Append(bookBuilder.Build());
     return this;
   }
 
