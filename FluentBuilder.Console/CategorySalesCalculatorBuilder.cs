@@ -2,7 +2,7 @@
 
 namespace FluentBuilder.Console;
 
-public class CategorySalesCalculatorBuilder()
+public sealed class CategorySalesCalculatorBuilder()
 {
   private CategorySalesCalculator _categorySalesCalculator = new();
 

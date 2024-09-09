@@ -20,10 +20,18 @@ public class SalesPeriodTests
   }
 
   [Theory]
+  [InlineData("001", "saleId")]
+  [InlineData("1", "saleId")]
+  public void Should_ThrowArgumentException_WhenSalesIdIsInvalidLength(string salesId, string salesPeriodId)
+  {
+    var exceptionInvoked = () => new SalesPeriod(salesId, TotalQuantity, SaleValue);
+    
+    exceptionInvoked.Should().ThrowExactly<ArgumentOutOfRangeException>().And.ParamName.Should().Be(salesPeriodId);
+  }
+  
+  [Theory]
   [InlineData("", "saleId")]
-  [InlineData("001", "maxLength")]
-  [InlineData("1", "minLength")]
-  public void Should_ThrowArgumentException_WhenSalesIdIsEmpty_Or_InvalidLength(string salesId, string salesPeriodId)
+  public void Should_ThrowArgumentException_WhenSalesIdIsEmpty(string salesId, string salesPeriodId)
   {
     var exceptionInvoked = () => new SalesPeriod(salesId, TotalQuantity, SaleValue);
     

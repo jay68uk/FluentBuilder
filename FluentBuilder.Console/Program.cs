@@ -75,3 +75,5 @@ foreach (var authorSales in builderWithMultiListSalesPeriod.Sales())
 {
   Console.WriteLine($"builderWithMultiListSalesPeriod = Author: {authorSales.Key} - Sales: {authorSales.Value}");
 }
+
+var x= new SalesPeriod("001", 100, 200.00m);

@@ -2,7 +2,7 @@
 
 namespace FluentBuilder.Console;
 
-public class Book
+public sealed class Book
 {
   public Book(string author, string title)
   {
